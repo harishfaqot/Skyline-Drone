@@ -46,9 +46,9 @@
   </group>
 
   <!-- FastLIO → MAVROS bridge -->
-  <node pkg="fastlio_to_mavros" type="fastlio_bridge.py" name="fastlio_bridge" output="screen" respawn="true" />
+  <node pkg="skyline" type="fastlio_bridge.py" name="fastlio_bridge" output="screen" respawn="true" />
 
-  <!-- MAVROS (must edit apm.launch if you want respawn) -->
+  <!-- MAVROS -->
   <include file="$(find mavros)/launch/apm.launch">
     <arg name="fcu_url" value="/dev/ttyACM0:115200"/>
     <arg name="gcs_url" value="udp://@10.42.0.31:14550"/>
