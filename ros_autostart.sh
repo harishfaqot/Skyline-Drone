@@ -1,12 +1,11 @@
 #!/bin/bash
 # Source ROS setup
 source /opt/ros/noetic/setup.bash
-source ~/Autonomous-Drone-SLAM/ws_livox/devel/setup.bash
-source ~/Autonomous-Drone-SLAM/fastlio_ws/devel/setup.bash
-source ~/Autonomous-Drone-SLAM/drone_ws/devel/setup.bash
+source ~/Skyline-Drone/ws_livox/devel/setup.bash
+source ~/Skyline-Drone/skyline_ws/devel/setup.bash
 
 # Start All Node
-roslaunch fastlio_to_mavros drone.launch&
+roslaunch skyline drone.launch&
 sleep 10
 
 # Publish origin once (run once, not loop)
