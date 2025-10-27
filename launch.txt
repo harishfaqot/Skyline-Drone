@@ -1,0 +1,14 @@
+roslaunch fast_lio mapping_mid360.launch
+roslaunch livox_ros_driver2 msg_MID360.launch
+rosrun fastlio_to_mavros fastlio_bridge.py
+roslaunch mavros apm.launch fcu_url:=/dev/ttyACM0:115200 gcs_url:=udp://@0.0.0.0:14550
+roslaunch --screen foxglove_bridge foxglove_bridge.launch
+
+rostopic pub /mavros/global_position/set_gp_origin geographic_msgs/GeoPointStamped "header:
+  seq: 0
+  stamp: {secs: 0, nsecs: 0}
+  frame_id: 'map'
+position:
+  latitude: -6.218625
+  longitude: 106.802618
+  altitude: 1.0"
